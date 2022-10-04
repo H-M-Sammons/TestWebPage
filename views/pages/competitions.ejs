@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+
+<!--You will need to figure out how to do the main titles like BBQ, and how to formant the display-->
+
+
+        <%if(events.length){%>
+            <h1>Select an Event</h1>
+            <%events.forEach(events=>{%>
+               <a href="/wed/<%= events.id%>"> <p><%= events.category%></p></a>
+                <%});
+        }else{%>
+            <p>Currently there are no events being held</p>
+            <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

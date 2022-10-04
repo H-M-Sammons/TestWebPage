@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form action = '/events' method = 'POST'>
+        <table>
+            <tr>
+                <td><label for="hostName">Who is hosting?</label></td>
+                <td><input type="text" id="hostName" name="hostName" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td><label for="time">Who is hosting?</label></td>
+                <td><input type="text" id="time" name="time" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td><label for="location">Who is hosting?</label></td>
+                <td><input type="text" id="location" name="location" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td><label for="category">Title</label></td>
+                <td><input type="text" id="category" name="category" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td class = "align-top"><label for="description">Discription</label></td>
+                <td><textarea rows="5" id="description" name="description" class = "fixed-width"></textarea></td>
+            </tr>
+            <tr>
+                <td class = "align-top"><label for="otherInfo">Content</label></td>
+                <td><textarea rows="5" id="otherInfo" name="otherInfo" class = "fixed-width"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

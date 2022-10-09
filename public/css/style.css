@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #00421E;
+  background-color: #FFF6DC;
+}
+nav {
+  overflow: hidden;
+  padding-left: 20px;
+  color: #F0CB00;
+  background-color: #00703C;
+  width: 100%;
+}
+nav h2{
+text-align: left; 
+padding-right: 30px;
+color: #F0CB00;
+}
+nav a{
+ float: right;
+ right: 40px;
+ position: relative;
+ display: block;
+ padding: 16px;
+ text-decoration: none;
+ color: #F0CB00;
+ border-radius: 25px;
+}
+nav img{
+  float: right;
+  position: relative;
+  display: block;
+
+ }
+nav a:hover{
+  background-color: #717C7D;
+  color: #C3D7A4;
+}
+.but{
+  background-color: #00421E;
+}
+.content {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.content a{
+text-decoration: none;
+color: grey;
+}
+footer {
+  float: right;
+ display: block;
+ padding-right: 16px;
+ padding-bottom: 14px;
+ text-align: center;
+ text-decoration: none;
+ color: white;
+}
+.naveHeader li a{
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 25px;
+  color: #F0CB00;
+  /*
+  background-color: #00703C;
+  */
+}
+#story{
+width: 50%;
+padding-top: 20px;
+padding-bottom: 20px
+}
+label{
+font-size: small;
+}
+td{
+padding-right: 10px;
+padding-bottom: 10px;
+}
+.align-top{
+vertical-align: top;
+}
+.align-right{
+text-align: right;
+}
+.fixed-width{
+width: 300px;
+}
+input, textarea{
+font-family: Arial, Helvetica, sans-serif;
+}
+#logo{
+  height: 100px;
+  width: 100px;
+  display:block;
+  margin-left: 5px;
+}
+#face{
+  height: 30px;
+  width: 30px;
+  right: 40px;
+}
+#twit{
+  height: 30px;
+  width: 30px;
+  right: 60px;
+}
+button{
+  background-color: #00703C;
+  color: #F0CB00;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+button:hover{
+  background-color: #717C7D;
+  color: #C3D7A4;
+}
+input{
+  border: none;
+  color: #00421E;
+  background-color: #c3d7a481;
+}
+select{
+  border: none;
+  color: #00421E;
+  background-color: #c3d7a481;
+}
+textarea{
+  border: none;
+  color: #00421E;
+  background-color: #c3d7a481;
+}
+h2{
+  font-size: 40px;
+  text-align: center;
+}
+p{
+  text-align: center;
+  font-size: 20px;
+}
+
+#test{
+  height: 200px;
+  width: 300px;
+}

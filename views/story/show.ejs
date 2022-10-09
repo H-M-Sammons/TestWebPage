@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs')%>
+    <div class = "content">
+       <h1><%=story.title%></h1>
+       <h5>Event will be held by <%= story.author%> from <%= story.start%> to <%= story.end%> on the <%= story.date%></h5>
+       <br>
+       <div id = "Location:">Location <%= story.location%></div>
+       <br>
+       <br>
+       <div id = "information"><%= story.content%></div>
+       <div id = "Other information"><%= story.otherInfo%></div>
+       <br>
+       <div id = "image"><img src=<%= story.image%> id="test"/></div>
+       
+       <br>
+       <br>
+       <form>
+        <button type ="submit" formmethod="GET" formaction="/stories/<%= story.id%>/eddit">Edit</button>
+        <button type ="submit" formmethod="POST" formaction="/stories/<%= story.id%>?_method=DELETE">Delete</button>
+       
+       </form>
+    </div>
+    <%- include('../partials/footer.ejs')%>

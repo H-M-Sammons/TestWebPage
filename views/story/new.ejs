@@ -1,0 +1,68 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <h1>Create a new compition</h1>
+    <form action = '/stories' method = 'POST'>
+        <table>
+            <tr>
+                <td><label for="hostName">Who is hosting?</label></td>
+                <td><input type="text" id="author" name="author" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="topic">Catogory</label></td>
+                <td><select id="topic" name="topic" class = "fixed-width" required>
+                    <option value="BBQ">BBQ</option>
+                    <option value="General Baking">general baked goods </option>
+                    <option value="Free Style">Free style</option>
+                </select></td>
+                
+            </tr>
+            <tr>
+                <td><label for="title">Title</label></td>
+                <td><input type="text" id="title" name="title" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="location">Location of Event?</label></td>
+                <td><input type="text" id="location" name="location" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="time">Time of Event created?</label></td>
+                <td><input type="text" id="time" name="time" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="start">When does the Event start?</label></td>
+                <td><input type="text" id="start" name="start" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="end">When does the Event finish?</label></td>
+                <td><input type="text" id="end" name="end" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="date">Day of Event?</label></td>
+                <td><input type="text" id="date" name="date" class = "fixed-width" required></td>
+            </tr>
+            
+            <tr>
+                <td class = "align-top"><label for="content">Discription</label></td>
+                <td><textarea rows="5" id="content" name="content" class = "fixed-width" required></textarea></td>
+            </tr>
+            <tr>
+                <td class = "align-top"><label for="otherInfo">Content</label></td>
+                <td><textarea rows="5" id="otherInfo" name="otherInfo" class = "fixed-width"> required</textarea></td>
+            </tr>
+            <!--<tr>
+                <td><label for="image">Event Image</label></td>
+                <td><input type="file" id="image" name="image"  accept="image/png, image/jpeg" class = "fixed-width" disabled></td>
+            </tr>-->
+             <tr>
+                <td><label for="image">Image URL</label></td>
+                <td><input type="text" id="image" name="image" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

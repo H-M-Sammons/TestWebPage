@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs')%>
+<div class = "content">
+
+
+    <h1>Do you want to join a Competition?</h1>
+    <small>Fill out this form and we'll add you</small>
+    <br>
+    <br>
+
+
+    <form action = '/newContest' method = 'POST'>
+        <table>
+            <tr>
+                <td><label for="Name">Name</label></td>
+                <td><input type="text" id="author" name="author" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Student Email</label></td>
+                <td><input type="email" id="email" name="email" class = "fixed-width"></td>
+            </tr>
+            <tr>
+                <td><label for="Compentition">Competition </label></td>
+                <td><select id="Compentition" name="Compentition" class = "fixed-width">
+                    <option value="1">BBQ</option>
+                    <option value="2">pastry</option>
+                    <option value="3">general baked goods </option>
+                    <option value="4">Free style</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Submit</button></td>
+            </tr>
+        </table>        
+    </form>
+
+<h4>If you have any question, comments of concerns contact us at our email at Cookoff@uncc.edu</h4>
+    </div>
+    <%- include('./partials/footer.ejs')%>

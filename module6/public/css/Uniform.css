@@ -1,0 +1,141 @@
+/*
+Colors from:
+https://advancement.charlotte.edu/style-guide/epsilon-theme/technical-specifications/visual-elementsstyling
+
+The bacground color is FFF6DC
+The DGreen is 00421E
+The yellow is F0CB00
+The MGreen is 00703C
+
+Other supporting colors
+gray blue 76A9AA
+light green C3D7A4
+ */
+/*
+I set this extra css to keep the pages consistant, specific style is on the page specific css
+ */
+body{
+    background-color: #FFF6DC;
+}
+.naveHeader{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-right: 70px;
+    float: right;
+}
+.naveHeader li{
+    list-style: none;
+    display: inline-block;
+}
+.navfoot li{
+    list-style: none;
+    float: right; 
+    padding-right: 30px;
+   
+    /*display: inline-block;
+    */
+}
+.naveHeader li a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 25px;
+    color: #F0CB00;
+    /*
+    background-color: #00703C;
+    */
+}
+.naveHeader li a:hover{
+    background-color: #717C7D;
+    color: #C3D7A4;
+}
+.navfoot li a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 25px;
+    color: #F0CB00;
+    background-color: #00703C;
+}
+.navfoot li img{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 25px;
+    color: #F0CB00;
+    
+}
+.navfoot li a:hover{
+    background-color: #717C7D;
+    color: #C3D7A4;
+}
+#logo{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top:20px;
+    left: 10px;
+    display: inline-block;
+    
+    margin-left: 5px;
+}
+footer{
+    position: relative;
+    top: 200px;
+}
+main{
+    position: relative;
+    top: 120px;
+    color: #00421E;
+}
+footer{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background-color: #C3D7A4;
+}
+header{
+    background-color: #C3D7A4;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+#aboutTerms{
+position: relative;
+    top: -10px;
+    font-size: 10px;
+    left: 30px;
+}
+#face{
+    height: 30px;
+    width: 30px;
+}
+#twit{
+    height: 30px;
+    width: 30px;
+}
+.naveFooter2{
+    justify-content: space-between;
+    display: flex;
+    margin-right: 70px;
+    float: right;
+    position: relative;
+    top: -60px;
+}
+.naveFooter2 li{
+    list-style: none;
+    display: inline-block;
+}
+.naveFooter2 li a{
+    text-decoration: none;
+    border-radius: 25px;
+    color: #F0CB00;
+    /*
+    background-color: #00703C;
+    */
+}
+.naveFooter2 li a:hover{
+    background-color: #717C7D;
+    color: #C3D7A4;
+}

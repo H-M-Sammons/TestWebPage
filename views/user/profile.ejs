@@ -1,0 +1,67 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <h2>Welcome, <%=user.firstName%></h2>
+    <%if(stories.length) {%>
+        <p>You have created the following stories</p>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+        <%stories.forEach(story => {%>
+        <tbody>
+            <tr>
+                <td><a href = '/stories/<%= story.id%>'><p><%=story.title%></p></a></td>
+                    <td><p><%=story.topic%></p></td>
+                <td><form>
+                <button type ="submit" formmethod="GET" formaction="/stories/<%= story.id%>/edit">Edit</button>
+                <button type ="submit" formmethod="POST" formaction="/stories/<%= story.id%>?_method=DELETE">Delete</button>
+            </form></td>
+        </tr>
+        
+
+        <%});%>
+    </tbody>
+    </table>
+        <%} else {%>
+        <p>You have not created any stories</p>
+    <%}%>
+     
+
+
+    <%if(rsvps.length) {%>
+        <p>Events you are RSVPED for</p>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Going?</th>
+                </tr>
+              </thead>
+        <%rsvps.forEach(rsvp => {%>
+        <tbody>
+            <tr>
+                <td><p><%= rsvp.comp.title %></p></td>
+                <td><p><%= rsvp.comp.topic  %></p></td>
+                <td><p><%= rsvp.comming%></p></td>
+        </tr>
+        <%});%>
+    </tbody>
+    </table>
+        <%} else {%>
+        <p>You have not rsvped for anything</p>
+    <%}%>
+
+
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

@@ -1,19 +1,34 @@
 const express = require('express');
-const router = express.Router();
-const controller = require('../controllers/storyController')
-//GET /stories: send all stories to the user
-router.get('/',controller.index);
-//GET /stories/news:
-router.get('/new', controller.new);
-//POST /stories:
-router.post('/', controller.create);
-//GET /stories/:id: send the details of story
-router.get('/:id', controller.show);
-//get /stories/:id/edit
-router.get('/:id/eddit', controller.edit);
-//PUT /stories/:id: update
-router.put('/:id', controller.update);
-//DELETE /stories/:id, delete bassed on id
-router.delete('/:id', controller.delete);
-module.exports = router;
+const controller = require('../controllers/storyController');
+const {isLoggedIn, isAuthor, isNotAuthor} = require('../middlewares/auth');
+const{validateId, validateStory, validateEndTime} = require('../middlewares/validator');
 
+const router = express.Router();
+
+//GET /stories: send all stories to the user
+router.get('/', controller.index);
+
+//GET /stories/new: send html form for creating a new story
+router.get('/new', isLoggedIn, controller.new);
+
+//POST /stories: create a new story
+router.post('/', isLoggedIn, validateStory, validateEndTime, controller.create);
+
+//GET /stories/:id: send details of story identified by id
+router.get('/:id', validateId, controller.show);
+
+//GET /stories/:id/edit: send html form for editing an exising story
+router.get('/:id/edit', validateId, isLoggedIn, isAuthor, controller.edit);
+
+//PUT /stories/:id: update the story identified by id
+router.put('/:id', validateId, isLoggedIn, isAuthor, validateStory, controller.update);
+
+//DELETE /stories/:id, delete the story identified by id
+router.delete('/:id', validateId, isLoggedIn, isAuthor, controller.delete);
+
+//rsvp for event
+router.post('/:id/rsvp', validateId, isLoggedIn, isNotAuthor, controller.rsvp)
+ 
+
+
+module.exports = router;

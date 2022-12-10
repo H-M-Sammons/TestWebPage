@@ -1,7 +1,65 @@
 
 const{DateTime} = require("luxon");
 const {v4: uuidv4} = require('uuid');
-const stories = [
+//const { connect } = require("../routes/storyRoutes");
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const storySchema = new Schema({
+    title: {type: String, required: [true, 'title is required']},
+    author: {type: Schema.Types.ObjectId, ref: 'User'},
+    topic: {type: String, required: [true, 'topic is required']},
+    //change to time
+    start: {type: String, required: [true, 'start is required']},
+    //change to time
+    end: {type: String, required: [true, 'end is required']},
+    //change to date
+    date: {type: String, required: [true, 'date is required']},
+    location: {type: String, required: [true, 'location is required']},
+    content: {type: String, required: [true, 'contnet is required'], 
+        minLength: [10, 'the content should have at least 10 charaters']},
+    otherInfo: {type: String, required: [true, 'contnet is required'], 
+        minLength: [10, 'the content should have at least 10 charaters']},
+    image: {type: String, required: [true, 'image is required']}
+    //this might be wrong but I needed the place holder.
+    //image:{
+      //  data: Buffer,
+        //contentType: String
+    //}
+},
+{timestamps: true}
+);
+// the collection name is stories in the database
+module.exports= mongoose.model('Story', storySchema);
+
+
+//const unique = [...new Set(Story.map(story => story.topic))];
+   
+//exports.findTopic = function(){
+  //  return unique;
+//}
+//let arrayHonld = [];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const stories = [
     {
         id: '1',
         title: 'Free Style Baking',
@@ -123,6 +181,23 @@ const stories = [
         image: '/images/freeForAl.jpg'
     }
 ];
+*/
+
+
+/*
+// I was not sure how to do the connections so I followed a group by function tutorial
+// this makes an array for every item that shares the same topic
+//https://sebhastian.com/javascript-group-by/
+//this makes a function that takes an array and the value you want to sort by
+
+
+  
+
+//const tempTopic = groupBy(stories, "topic");
+//console.log(tempTopic);
+
+//const topic = [...new Set(connect.map(story.topic))];
+  //  return topic;
 
 exports.find = function(){
     return stories;
@@ -161,3 +236,33 @@ exports.deleteById = function(id){
         return false;
     }
 }
+
+exports.groupByTopic = function(){
+    const tempTopic = groupBy(stories, "topic");
+    return tempTopic;
+}
+
+*/
+
+/*
+
+const storySchema = new Schema({
+    title: {type: String, required: [true, 'title is required']},
+    author: {type: String, required: [true, 'author is required']},
+    topic: {type: String, required: [true, 'author is required']},
+    start: {type: String, required: [true, 'author is required']},
+    end: {type: String, required: [true, 'author is required']},
+    date: {type: String, required: [true, 'author is required']},
+    location: {type: String, required: [true, 'author is required']},
+    content: {type: String, required: [true, 'contnet is required'], 
+        minLength: [10, 'the content should have at least 10 charaters']},
+    otherInfo: {type: String, required: [true, 'contnet is required'], 
+        minLength: [10, 'the content should have at least 10 charaters']},
+    //this might be wrong but I needed the place holder.
+    //image:{
+      //  data: Buffer,
+        //contentType: String
+    //}
+},
+
+*/

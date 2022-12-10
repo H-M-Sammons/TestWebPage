@@ -9,15 +9,40 @@
     <nav>
         <a href='/'><img src="/images/logoA.png" class="logo" id="logo"/></a>
         <h2>UNCC Cook Off</h2>
-        <a href='/'class="but">Login</a>
         <a href='/stories' class="but">Compititions</a>
-        <a href='/stories/new'class="but">Create a New Event</a>
-        <a href='/contactUs'class="but">Contact Us</a>
-        <a href='/aboutUs'class="but">About Us</a>
         
+      <!-- <a href='/contactUs'class="but">Contact Us</a>-->
+       <!--<a href='/aboutUs'class="but">About Us</a>-->
+       <%if(!user) {%>
+        <a href='/users/new' class="but">Sign Up</a>
+        <a href='/users/login' class="but">Login</a>
+        
+    <%} else {%>
+        <a href='/users/profile' class="but">Profile</a>
+        <a href='/stories/new'class="but">Create a New Event</a>
+        <a href='/users/logout' class="but">Logout</a>
+    <%}%>
         <br>
         <br>
         <br>
         <br>
         
     </nav>
+
+
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+    
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

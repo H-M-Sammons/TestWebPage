@@ -1,22 +1,47 @@
 <%- include('../partials/header.ejs')%>
     <div class = "content">
-       <h1><%=story.title%></h1>
-       <h5>Event will be held by <%= story.author%> from <%= story.start%> to <%= story.end%> on the <%= story.date%></h5>
+       <h1 ><%=story.title%></h1>
+       <small>Posted <%= story.createdAt.toLocaleString()%> by <%= story.author.firstName %></small>
        <br>
-       <div id = "Location:">Location <%= story.location%></div>
+       <small>Update: <%= story.updatedAt%></small>
        <br>
-       <br>
-       <div id = "information"><%= story.content%></div>
-       <div id = "Other information"><%= story.otherInfo%></div>
        <br>
        <div id = "image"><img src=<%= story.image%> id="test"/></div>
+       <h5 class="adjText" >Event will be held by  <%= story.author.firstName %> from <%= story.start%> to <%= story.end%> on the <%= story.date%></h5>
+       <br>
+       <div id = "Location:" class="adjText">Location <%= story.location%></div>
+       <br>
+          <br>
        
        <br>
+       <div id ="information" class="adjText"><%= story.content%></div>
        <br>
+       <br>
+       <div id ="Other information" class="adjText"><%= story.otherInfo%></div>
+    
+       <br>
+       <br>
+       <br>
+       <br>
+       <%if(user == story.author._id) {%>
        <form>
-        <button type ="submit" formmethod="GET" formaction="/stories/<%= story.id%>/eddit">Edit</button>
+        <button type ="submit" formmethod="GET" formaction="/stories/<%= story.id%>/edit">Edit</button>
         <button type ="submit" formmethod="POST" formaction="/stories/<%= story.id%>?_method=DELETE">Delete</button>
-       
        </form>
+       <%}%>
+       <%if(user != story.author._id) {%>
+         <% k=0 %>
+         <% rsvps.forEach(rsvp =>{%>  
+             <%  if(rsvp.comming == "yes"){k=k+1}});%>
+         <h5> <%= k %> members RSVP'd</h5>
+         <small>Would you like to rsvp to this event?</small>
+         <br>
+         <form method="POST" action="/stories/<%= story.id%>/rsvp">
+          <input type ="submit" name="rsvp" value="yes" />
+          <input type ="submit" name="rsvp" value="no" />
+          <input type ="submit" name="rsvp" value="maybe" />
+         </form>
+      
+         <%}%>
     </div>
-    <%- include('../partials/footer.ejs')%>
+   <%- include('../partials/footer.ejs')%>
